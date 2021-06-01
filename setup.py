@@ -3,25 +3,25 @@ from setuptools import setup
 
 setup(
     name='sklearn-crfsuite',
-    version='0.3.6',
+    version='0.4.0',
     author='Mikhail Korobov',
     author_email='kmike84@gmail.com',
     license='MIT license',
     long_description=open('README.rst').read() + "\n\n" + open('CHANGES.rst').read(),
-    description="CRFsuite (python-crfsuite) wrapper which provides interface simlar to scikit-learn",
+    description="CRFSuite (python-crfsuite) wrapper which provides interface similar to scikit-learn",
     url='https://github.com/TeamHG-Memex/sklearn-crfsuite',
     zip_safe=False,
     packages=['sklearn_crfsuite'],
     install_requires=[
-        "tqdm >= 2.0",
+        "python-crfsuite >= 0.9.7"
         "six",
         "tabulate",
-        "python-crfsuite >= 0.8.3"
+        "tqdm",
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
