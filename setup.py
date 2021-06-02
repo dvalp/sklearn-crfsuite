@@ -13,11 +13,15 @@ setup(
     zip_safe=False,
     packages=['sklearn_crfsuite'],
     install_requires=[
-        "python-crfsuite >= 0.9.7"
+        "python-crfsuite >= 0.9.7",
+        "scikit-learn ~= 0.24.0",
         "six",
         "tabulate",
         "tqdm",
     ],
+    extras_require={
+        "test": ["pytest"]
+    },
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
