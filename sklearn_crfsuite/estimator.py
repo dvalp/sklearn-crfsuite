@@ -264,6 +264,8 @@ class CRF(BaseEstimator):
         self.variance = variance
         self.gamma = gamma
 
+        self.model_filename = model_filename
+        self.keep_tempfiles = keep_tempfiles
         self.modelfile = FileResource(
             filename=model_filename,
             keep_tempfiles=keep_tempfiles,
