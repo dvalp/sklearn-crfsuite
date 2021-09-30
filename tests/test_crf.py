@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import os
 import pickle
 
@@ -7,8 +6,7 @@ from sklearn.model_selection import cross_val_score
 
 from sklearn_crfsuite import CRF
 
-
-ALGORITHMS =  ["lbfgs", "l2sgd", "pa", "ap", "arow"]
+ALGORITHMS = ["lbfgs", "l2sgd", "pa", "ap", "arow"]
 
 
 @pytest.mark.parametrize("algorithm", ALGORITHMS)
@@ -138,7 +136,7 @@ def test_attributes(xseq, yseq):
     assert crf.state_features_ is None
     assert crf.transition_features_ is None
 
-    crf.fit([xseq]*20, [yseq]*20)
+    crf.fit([xseq] * 20, [yseq] * 20)
 
     assert crf.tagger_ is not None
     assert crf.size_ > 1000

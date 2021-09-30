@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import, division
 from functools import wraps
 
 from sklearn_crfsuite.utils import flatten
@@ -11,6 +9,7 @@ def _flattens_y(func):
         y_true_flat = flatten(y_true)
         y_pred_flat = flatten(y_pred)
         return func(y_true_flat, y_pred_flat, *args, **kwargs)
+
     return wrapper
 
 

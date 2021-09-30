@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import, division
-
 import pytest
 
 from sklearn_crfsuite import metrics
-
 
 y1 = [["x", "z", "y"], ["x", "x"]]
 y2 = [["y", "z", "y"], ["x", "y"]]
@@ -41,5 +37,5 @@ def test_flat_f1_score_binary():
 def test_sequence_accuracy():
     assert metrics.sequence_accuracy_score(y1, y2) == 0
     assert metrics.sequence_accuracy_score([], []) == 0
-    assert metrics.sequence_accuracy_score([[1,2], [3], [4]], [[1,2], [4], [4]]) == 2 / 3
-    assert metrics.sequence_accuracy_score([[1,2], [3]], [[1,2], [3]]) == 1.0
+    assert metrics.sequence_accuracy_score([[1, 2], [3], [4]], [[1, 2], [4], [4]]) == 2 / 3
+    assert metrics.sequence_accuracy_score([[1, 2], [3]], [[1, 2], [3]]) == 1.0

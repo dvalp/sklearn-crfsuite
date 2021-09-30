@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
 import pytest
 
 
@@ -17,6 +15,7 @@ def xseq():
         {'clean': 1},
         {u'солнце': u'не светит'.encode('utf8'), 'clean': 1},
     ]
+
 
 @pytest.fixture
 def yseq():
