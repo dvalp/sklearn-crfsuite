@@ -7,6 +7,7 @@ class LinePerIterationTrainer(pycrfsuite.Trainer):
     This pycrfsuite.Trainer prints information about each iteration
     on a single line.
     """
+
     def on_iteration(self, log, info):
         parts = [
             "Iter {num:<3} ",
@@ -39,11 +40,11 @@ class LinePerIterationTrainer(pycrfsuite.Trainer):
                 for entity, score in sorted(last_iter['scores'].items())
             ]
             table = tabulate(data,
-                headers=["Label", "Precision", "Recall", "F1", "Support"],
-                floatfmt="0.3f",
-            )
+                             headers=["Label", "Precision", "Recall", "F1", "Support"],
+                             floatfmt="0.3f",
+                             )
             size = len(table.splitlines()[0])
-            print("="*size)
+            print("=" * size)
             print(table)
-            print("-"*size)
+            print("-" * size)
         super(LinePerIterationTrainer, self).on_optimization_end(log)
