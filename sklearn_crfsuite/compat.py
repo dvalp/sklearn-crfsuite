@@ -1,5 +1,5 @@
 """
-allow to build docs without scikit-learn installed
+allow building docs without scikit-learn installed
 """
 
 try:
