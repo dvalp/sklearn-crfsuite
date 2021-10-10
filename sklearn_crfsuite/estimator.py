@@ -323,7 +323,7 @@ class CRF(BaseEstimator):
             if self.verbose:
                 print("")
 
-        trainer.train(self.modelfile.name, int_holdout=(-1 if X_dev is None else 1))
+        trainer.train(self.modelfile.name, holdout=(-1 if X_dev is None else 1))
         self.training_log_ = trainer.logparser
         return self
 
