@@ -1,18 +1,14 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
-
-from six.moves import zip
-from tqdm import tqdm
 import pycrfsuite
+from tqdm import tqdm
 
 from sklearn_crfsuite._fileresource import FileResource
-from sklearn_crfsuite.trainer import LinePerIterationTrainer
 from sklearn_crfsuite.compat import BaseEstimator
+from sklearn_crfsuite.trainer import LinePerIterationTrainer
 
 
 class CRF(BaseEstimator):
     """
-    python-crfsuite wrapper with interface siimlar to scikit-learn.
+    python-crfsuite wrapper with interface similar to scikit-learn.
     It allows to use a familiar fit/predict interface and scikit-learn
     model selection utilities (cross-validation, hyperparameter optimization).
 
@@ -207,9 +203,9 @@ class CRF(BaseEstimator):
         is to use pickle (or its alternatives like joblib).
 
     """
+
     def __init__(self,
                  algorithm=None,
-
                  min_freq=None,
                  all_possible_states=None,
                  all_possible_transitions=None,
@@ -233,7 +229,6 @@ class CRF(BaseEstimator):
                  averaging=None,
                  variance=None,
                  gamma=None,
-
                  verbose=False,
                  model_filename=None,
                  keep_tempfiles=False,
@@ -263,7 +258,6 @@ class CRF(BaseEstimator):
         self.averaging = averaging
         self.variance = variance
         self.gamma = gamma
-
         self.model_filename = model_filename
         self.keep_tempfiles = keep_tempfiles
         self.modelfile = FileResource(
@@ -275,7 +269,6 @@ class CRF(BaseEstimator):
         self.verbose = verbose
         self.trainer_cls = trainer_cls
         self.training_log_ = None
-
         self._tagger = None
         self._info_cached = None
 
@@ -330,7 +323,7 @@ class CRF(BaseEstimator):
             if self.verbose:
                 print("")
 
-        trainer.train(self.modelfile.name, holdout=-1 if X_dev is None else 1)
+        trainer.train(self.modelfile.name, holdout=(-1 if X_dev is None else 1))
         self.training_log_ = trainer.logparser
         return self
 

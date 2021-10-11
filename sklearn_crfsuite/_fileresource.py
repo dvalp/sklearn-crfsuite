@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
 import os
 import tempfile
 
@@ -11,12 +9,14 @@ class FileResource(object):
     attribute; when pickling, the contents of this file is pickled;
     when unpickling, a new temp file is created; temp files are auto-deleted.
     """
+
     def __init__(self, filename=None, keep_tempfiles=False, suffix='', prefix=''):
         self.name = filename
         self.auto = filename is None
         self.keep_tempfiles = keep_tempfiles
         self.suffix = suffix
         self.prefix = prefix
+        self.fd = None
 
     def ensure_name(self):
         """ Ensure that a filename is available """
@@ -74,4 +74,3 @@ class FileResource(object):
             self.ensure_name()
             with open(self.name, 'wb') as f:
                 f.write(data)
-

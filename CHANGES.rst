@@ -1,6 +1,19 @@
 Changes
 =======
 
+0.4.1 (2021-06-22)
+------------------
+
+* Drop Python 2 support.
+
+0.4.0 (2021-06-21)
+------------------
+
+* Add pyproject.toml and use setup.cfg for build configuration.
+* Update to newer package requirements.
+* Change code to work with newer SKLearn versions.
+* Simplify Tox configuration
+
 0.3.6 (2017-06-22)
 ------------------
 
